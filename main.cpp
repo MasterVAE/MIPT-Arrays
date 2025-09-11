@@ -47,9 +47,9 @@ int main()
     printf("Произвольная\n");
     int (*matrix_check) (int, int, size_t, size_t);
     int **data4;
-    sizeX = 30;
+    sizeX = 20;
     sizeY = 20;
-    matrix_check = lines_matrix; //сюда вставляется ченибудь из matrixfunc.h
+    matrix_check = buble_matrix; //сюда вставляется ченибудь из matrixfunc.h
     initialize_variable(data4, sizeY, sizeX, matrix_check);
     print_matrix_variable(*data4, sizeY, sizeX, matrix_check);
     printf("%d", *max_matrix_variable(*data4, sizeY, sizeX, matrix_check));

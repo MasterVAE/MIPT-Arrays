@@ -29,3 +29,16 @@ int lines_matrix(int y, int x, size_t sizeY, size_t sizeX)
     } 
     else return 0;
 }
+
+int buble_matrix(int y, int x, size_t sizeY, size_t sizeX)
+{
+    if((sizeY/2 - y) * (sizeY/2 - y) + (sizeX/2 - x) * (sizeX/2 - x) < sizeX * sizeY/4)
+    {
+        if((sizeY/2 - y) * (sizeY/2 - y) + (sizeX/2 - x) * (sizeX/2 - x) > sizeX * sizeY/30)
+        {
+            return 1;
+        }
+        else return 0;
+    } 
+    else return 0;
+}
