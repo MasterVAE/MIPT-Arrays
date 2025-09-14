@@ -7,6 +7,8 @@
 //Прямоугольная нормисная
 int *initialize_rc(int *data, size_t sizeY, size_t sizeX)
 {
+    assert(data != NULL);
+
     for(int y = 0; y < sizeY; y++)
     {
         for(int x = 0; x < sizeX; x++)
@@ -19,6 +21,8 @@ int *initialize_rc(int *data, size_t sizeY, size_t sizeX)
 
 void print_matrix_rc(const int *data, size_t sizeY, size_t sizeX)
 {
+    assert(data != NULL);
+
     for(size_t y = 0; y < sizeY; y++)
     {
         for(size_t x = 0; x < sizeX; x++)
@@ -31,6 +35,8 @@ void print_matrix_rc(const int *data, size_t sizeY, size_t sizeX)
 
 const int *max_matrix_rc(const int *data, size_t sizeY, size_t sizeX)
 {
+    assert(data != NULL);
+
     const int *max = data;
     for(size_t y = 0; y < sizeY; y++)
     {
@@ -48,6 +54,8 @@ const int *max_matrix_rc(const int *data, size_t sizeY, size_t sizeX)
 //Треугольная
 int *initialize_tr(int *data, size_t size)
 {
+    assert(data != NULL);
+
     for(int y = 1; y < size; y++)
     {
         for(int x = 0; x < y; x++)
@@ -60,6 +68,8 @@ int *initialize_tr(int *data, size_t size)
 
 void print_matrix_tr(const int *data, size_t size)
 {
+    assert(data != NULL);
+
     for(size_t y = 1; y < size; y++)
     {
         for(size_t x = 0; x < y; x++)
@@ -72,6 +82,8 @@ void print_matrix_tr(const int *data, size_t size)
 
 const int *max_matrix_tr(const int *data, size_t size)
 {
+    assert(data != NULL);
+
     const int *max = data;
     for(size_t y = 1; y < size; y++)
     {
@@ -84,41 +96,6 @@ const int *max_matrix_tr(const int *data, size_t size)
         }
     }
     return max;
-}
-
-//Круглая
-int *initialize_cr(int **data, size_t radius)
-{
-    assert(data != NULL);
-
-    size_t count = 0;
-    for(int y = 0; y < 2 * radius; y++)
-    {
-        for(int x = 0; x < 2 * radius; x++)
-        {
-            if((radius - y) * (radius - y) + (radius - x) * (radius - x) < radius*radius)
-            {
-                count++;
-            } 
-        }
-    }
-    *data = (int *)calloc(count, sizeof(int));
-
-    assert(*data != NULL);
-
-    count = 0;
-    for(int y = 0; y < 2 * radius; y++)
-    {
-        for(int x = 0; x < 2 * radius; x++)
-        {
-            if((radius - y) * (radius - y) + (radius - x) * (radius - x) < radius*radius)
-            {
-                (*data)[count] = count;
-                count++;
-            } 
-        }
-    }
-    return *data;
 }
 
 void print_matrix_cr(const int *data, size_t radius)
@@ -203,6 +180,8 @@ int *initialize_variable(int **data, size_t sizeY, size_t sizeX, int (*matrix_ch
 
 void print_matrix_variable(const int *data, size_t sizeY, size_t sizeX, int (*matrix_check) (int, int, size_t, size_t))
 {
+    assert(data != NULL);
+
     int count = 0;
     for(int y = 0; y < sizeY; y++)
     {
@@ -223,6 +202,8 @@ void print_matrix_variable(const int *data, size_t sizeY, size_t sizeX, int (*ma
 
 const int *max_matrix_variable(const int *data, size_t sizeY, size_t sizeX, int (*matrix_check) (int, int, size_t, size_t))
 {
+    assert(data != NULL);
+
     const int *max = data;
 
     int count = 0;

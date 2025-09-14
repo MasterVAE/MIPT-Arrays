@@ -6,6 +6,7 @@
 #include "basematrix.h"
 #include "matrixfunc.h"
 
+
 int main()
 {
     //Прямоугольная нормисная
@@ -30,16 +31,6 @@ int main()
     print_matrix_tr(data2, size);
     printf("%d", *max_matrix_tr(data2, size));
 
-    printf("\n\n\n\n\n");
-
-    //Круглая
-    printf("Круглая\n");
-    size_t radius = 10;
-    int *data3;
-    initialize_cr(&data3, radius);
-    print_matrix_cr(data3, radius);
-    printf("%d", *max_matrix_cr(data3, radius));
-
 
     printf("\n\n\n\n\n");
 
@@ -49,7 +40,7 @@ int main()
     int **data4;
     sizeX = 20;
     sizeY = 20;
-    matrix_check = buble_matrix; //сюда вставляется ченибудь из matrixfunc.h
+    matrix_check = circle_matrix; //сюда вставляется ченибудь из matrixfunc.h
     initialize_variable(data4, sizeY, sizeX, matrix_check);
     print_matrix_variable(*data4, sizeY, sizeX, matrix_check);
     printf("%d", *max_matrix_variable(*data4, sizeY, sizeX, matrix_check));
